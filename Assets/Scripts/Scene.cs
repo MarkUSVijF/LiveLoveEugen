@@ -1,12 +1,21 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using static UnityEditor.ShaderGraph.Internal.KeywordDependentCollection;
 
-public class Scene : MonoBehaviour
+public class Scene : SwipeController//, MonoBehaviour
 {
-    public Rigidbody2D controllable;
-    public Rigidbody2D getController()
+    public new void Update()
     {
-        return controllable;
+        var old_state = state;
+        ((SwipeController)this).Update();
+
+        if (state != old_state)
+        {
+
+        }
     }
 }

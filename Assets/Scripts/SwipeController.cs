@@ -5,157 +5,212 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using static UnityEditor.ShaderGraph.Internal.KeywordDependentCollection;
+using static UnityEngine.RuleTile.TilingRuleOutput;
 
-[SerializeField]
-public enum SwipeOption
+
+public class SwipeController : MonoBehaviour
 {
-    Horizontal,
-    Upward
-} 
-public class SwipeController : MonoBehaviour, IDragHandler, IPointerDownHandler, IPointerUpHandler
-{
+    [SerializeField]
+    public enum SwipeOption
+    {
+        Horizontal,
+        Upward,
+        Horizontal_Paning
+    }
 
-
-    public Scene scene;
-    //public Rigidbody2D scene.getController();
+    public Rigidbody2D controllable;
+    //public Rigidbody2D controllable;
     public SwipeOption direction = SwipeOption.Horizontal;
-    public float minDistance = 1;//25;
-    public float maxVelocity = 10000;//200;
-    public float rot_multiplier = 15;
-    public float dead_angle = 2;//5;
-    public float select_angle = 5;//15;
+    public float min_change = 2;//5;
+    public float max_change = 5;//15;
 
     public float state = 0;
 
     public bool active = false;
     public Vector2 inital_pos;
+    public float inital_rot;
     public Vector2 swipe_start;
     public Vector2 finger_pos;
 
-    public Vector2 temp;
+    public Rigidbody2D getController()
+    {
+        GetComponent<Scene>();
+        return controllable;
+    }
 
     public void Awake()
     {
-        inital_pos = scene.getController().position;
+        inital_pos = controllable.position;
+        inital_rot = controllable.rotation;
+
         finger_pos = Vector2.zero;
         swipe_start = Vector2.zero;
     }
 
-    public void OnPointerDown(PointerEventData eventData)
+    public void SwipeStart(Vector2 position)
     {
         active = true;
-        swipe_start = eventData.position;
-        finger_pos = eventData.position;
+        swipe_start = position;
+        finger_pos = position;
     }
 
-    public void OnDrag(PointerEventData eventData)
+    public void OnSwipe(Vector2 position)
     {
-        finger_pos = eventData.position;
+        finger_pos = position;
     }
 
-    public void OnPointerUp(PointerEventData eventData)
+    public void SwipeEnd(Vector2 position)
     {
         active = false;
-        scene.getController().velocity = Vector2.zero;
-        scene.getController().angularVelocity = 0f;
+        controllable.velocity = Vector2.zero;
+        controllable.angularVelocity = 0f;
         finger_pos = Vector2.zero;
         swipe_start = Vector2.zero;
     }
-
     public void Update()
     {
         var swipe = (finger_pos - swipe_start);
+        float cur_change = 0f;
 
-        if (direction == SwipeOption.Horizontal)
+        switch (direction)
         {
-            var cur_rot = scene.getController().rotation;
-            var target_rot = swipe.x / 450 * (-rot_multiplier);
-            var targetVelocity = target_rot - cur_rot;
-            var magnitude = Math.Abs(targetVelocity);
-            //var direction = magnitude == 0 ? 0 : targetVelocity / magnitude;
-
-            if (magnitude >= minDistance)
-            {
-                targetVelocity /= magnitude;
-                targetVelocity *= Math.Min(maxVelocity, magnitude * 10);
-                scene.getController().angularVelocity = targetVelocity;
-            }
-            else if (magnitude >= 1)
-            {
-                scene.getController().angularVelocity = targetVelocity;
-            }
-            else
-            {
-                if (active)
+            case SwipeOption.Horizontal:
                 {
-                    scene.getController().angularVelocity = 0f;
-                }
-                else
-                {
-                    scene.getController().position = inital_pos;
-                    scene.getController().velocity = Vector2.zero;
-                    scene.getController().rotation = 0;
-                    scene.getController().angularVelocity = 0;
-                }
-            }
+                    cur_change = -(controllable.rotation - inital_rot);
+                    var target_rot = swipe.x / 450 * (-15);
+                    var targetVelocity = target_rot - cur_change;
+                    var magnitude = Math.Abs(targetVelocity);
+                    //var direction = magnitude == 0 ? 0 : targetVelocity / magnitude;
 
-            if (Math.Abs(cur_rot) < dead_angle)
-            {
-                state = 0;
-            }
-            else if (Math.Abs(cur_rot) > select_angle)
-            {
-                state = -cur_rot / Math.Abs(cur_rot);
-            }
-            else
-            {
-                state = -((Math.Abs(cur_rot) - dead_angle) / (select_angle - dead_angle)) * (cur_rot / Math.Abs(cur_rot));
-            }
+                    if (magnitude >= 1)
+                    {
+                        targetVelocity /= magnitude;
+                        targetVelocity *= Math.Min(10000, magnitude * 10);
+                        controllable.angularVelocity = targetVelocity;
+                    }
+                    else if (magnitude >= 1)
+                    {
+                        controllable.angularVelocity = targetVelocity;
+                    }
+                    else
+                    {
+                        if (active)
+                        {
+                            controllable.angularVelocity = 0f;
+                        }
+                        else
+                        {
+                            controllable.position = inital_pos;
+                            controllable.velocity = Vector2.zero;
+                            controllable.rotation = 0;
+                            controllable.angularVelocity = 0;
+                        }
+                    }
+                }
+                break;
+            case SwipeOption.Horizontal_Paning:
+                {
+                    cur_change = (controllable.position.x - inital_pos.x);
+                    var targetVelocity = ((finger_pos - swipe_start) - (controllable.position - inital_pos));
+                    targetVelocity.Scale(new Vector2(1f, 0f));
+                    var distance = targetVelocity.magnitude;
+
+                    if (active)
+                    {
+                        if (distance >= 1)
+                        {
+                            targetVelocity /= distance;
+                            targetVelocity *= Math.Min(10000, distance * 10);
+                            controllable.velocity = targetVelocity;
+                        }
+                        else
+                        {
+                            controllable.velocity = Vector2.zero;
+                        }
+                    }
+                    else
+                    {
+                        if (distance >= 1)
+                        {
+                            targetVelocity /= distance;
+                            targetVelocity *= Math.Min(10000, distance * 10);
+                            controllable.velocity = targetVelocity;
+                        }
+                        else if (distance >= 1)
+                        {
+                            controllable.velocity = targetVelocity;
+                        }
+                        else
+                        {
+                            controllable.position = inital_pos;
+                            controllable.velocity = Vector2.zero;
+                        }
+                    }
+                }
+                break;
+            case SwipeOption.Upward:
+                {
+                    cur_change = (controllable.position.y - inital_pos.y);
+                    var targetVelocity = ((finger_pos - swipe_start) - (controllable.position - inital_pos));
+                    targetVelocity.Scale(new Vector2(0f, 1f));
+                    var distance = targetVelocity.magnitude;
+
+                    if (active)
+                    {
+                        if (((finger_pos - swipe_start) + (controllable.position - inital_pos)).y <= 0)
+                        {
+                            controllable.position = inital_pos;
+                            controllable.velocity = Vector2.zero;
+                            swipe_start = finger_pos;
+                            return;
+                        }
+                        else if (distance >= 1)
+                        {
+                            targetVelocity /= distance;
+                            targetVelocity *= Math.Min(10000, distance * 10);
+                            controllable.velocity = targetVelocity;
+                        }
+                        else
+                        {
+                            controllable.velocity = Vector2.zero;
+                        }
+                    }
+                    else
+                    {
+                        if (distance >= 1)
+                        {
+                            targetVelocity /= distance;
+                            targetVelocity *= Math.Min(10000, distance * 10);
+                            controllable.velocity = targetVelocity;
+                        }
+                        else if (distance >= 1)
+                        {
+                            controllable.velocity = targetVelocity;
+                        }
+                        else
+                        {
+                            controllable.position = inital_pos;
+                            controllable.velocity = Vector2.zero;
+                        }
+                    }
+                }
+                break;
+            default:
+                break;
+        }
+
+
+        if (Math.Abs(cur_change) < min_change)
+        {
+            state = 0;
+        }
+        else if (Math.Abs(cur_change) > max_change)
+        {
+            state = cur_change / Math.Abs(cur_change);
         }
         else
         {
-            var targetVelocity = ((finger_pos - swipe_start) - (scene.getController().position - inital_pos));
-            targetVelocity.Scale(new Vector2(0f, 1f));
-            var distance = targetVelocity.magnitude;
-
-            if (active)
-            {
-                if (((finger_pos - swipe_start) + (scene.getController().position - inital_pos)).y <= 0)
-                {
-                    scene.getController().position = inital_pos;
-                    scene.getController().velocity = Vector2.zero;
-                    swipe_start = finger_pos;
-                    return;
-                }
-                else if (distance >= minDistance)
-                {
-                    targetVelocity /= distance;
-                    targetVelocity *= Math.Min(maxVelocity, distance * 10);
-                    scene.getController().velocity = targetVelocity;
-                }
-                else
-                {
-                    scene.getController().velocity = Vector2.zero;
-                }
-            }
-            else
-            {
-                if (distance >= minDistance)
-                {
-                    targetVelocity /= distance;
-                    targetVelocity *= Math.Min(maxVelocity, distance * 10);
-                    scene.getController().velocity = targetVelocity;
-                }
-                else if (distance >= 1)
-                {
-                    scene.getController().velocity = targetVelocity;
-                }
-                else
-                {
-                    scene.getController().position = inital_pos;
-                    scene.getController().velocity = Vector2.zero;
-                }
-            }
+            state = ((Math.Abs(cur_change) - min_change) / (max_change - min_change)) * (cur_change / Math.Abs(cur_change));
         }
     }
 }
