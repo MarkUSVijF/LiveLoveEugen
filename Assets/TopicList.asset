@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0786ccd851e532e4a964bbfaa1537ba8, type: 3}
+  m_Name: TopicList
+  m_EditorClassIdentifier: 
+  topics:
+  - Name: Entrance
+    Thoughts: 'Back in my days this used to be the entrance to my magnificent palace.
+      Well, at least they did not dare to remove the carvings of my great idol of
+      Alexander the great! He might even have been a tiny bit greater than me. '
+    State: 
+  - Name: 'Ceiling Murals '
+    Thoughts: As you can see on this beautiful ceiling mural, I was a damn handsome
+      guy. Justice was my right to serve and you justice reaching out to me to hold
+      my hand. If you have not noticed by now, I am of course the person in the very
+      middle. Just as the most important person should be.
+    State: 
+  - Name: 'Self Portrait '
+    Thoughts: 'The ottomans were quite a nuisance, however nothing when compared
+      to my own flesh and blood. My cousins would not get the message that I was
+      the right person to rule them all, so they had to pay! '
+    State: 
+  - Name: Picture collection
+    Thoughts: "Quite a sight to behold, isn\u2019t it? My collection is indeed one
+      of a kind. It is okay to be jealous of me. I sincerely hope that no one dares
+      to even think of touching these works of art! "
+    State: 
+  - Name: Audience room
+    Thoughts: As every important person I of course had to take part in many audiences,
+      which took place in my own audience room, where else did you think an audience
+      would be held? Here you can see me having an, of course private, audience.
+      I can not recall what exactly it was about, nor would I share such secrets
+      with you, but rest assured it was something of significant importance!
+    State: 
+  - Name: 'Favorite pictures '
+    Thoughts: "Ah yes, my favorite pictures of my whole collection. Please do not
+      worry about that children\u2019s painting behind me, it is nothing of importance.
+      So, which one of my pictures would you like to take a closer look at?"
+    State: 

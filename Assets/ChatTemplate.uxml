@@ -1,0 +1,9 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:GroupBox style="flex-grow: 1; height: 100%;">
+        <ui:ScrollView name="ScrollView" horizontal-scroller-visibility="Hidden" vertical-scroller-visibility="AlwaysVisible" style="flex-grow: 1;" />
+        <ui:GroupBox style="flex-grow: 0; flex-direction: row;">
+            <ui:TextField picking-mode="Ignore" value="filler text" name="input" style="flex-grow: 1;" />
+            <ui:Button text="Button" parse-escape-sequences="true" display-tooltip-when-elided="true" name="SendButton" />
+        </ui:GroupBox>
+    </ui:GroupBox>
+</ui:UXML>
