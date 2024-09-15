@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba5f15dbe65f7684fad8a8c27d9c0416, type: 3}
+  m_Name: Picture collection
+  m_EditorClassIdentifier: 
+  Background: {fileID: 21300000, guid: 1bbb1a2e55dac974a8ad799b8033e64f, type: 3}
+  dialog:
+  - Emotion: {fileID: 21300000, guid: d50e9b6bbff80e24eb8329ff46b9ac73, type: 3}
+    dialoge: "Quite a sight to behold, isn\u2019t it?"
+    options:
+      offset: {x: 0, y: 0, z: 0}
+      mirror_sprite: 0
+  - Emotion: {fileID: 21300000, guid: 9189b9308f76e894690b76f1e5253397, type: 3}
+    dialoge: Except all of the paintings I used to admire in this room were unfortunately
+      sold by my niece.
+    options:
+      offset: {x: 0, y: 0, z: 0}
+      mirror_sprite: 0
+  - Emotion: {fileID: 21300000, guid: deb88d5a64132ed4596cb3c8b23df8b4, type: 3}
+    dialoge: I guess they picked some nice alternatives in my absence.
+    options:
+      offset: {x: 0, y: 0, z: 0}
+      mirror_sprite: 0
+  - Emotion: {fileID: 21300000, guid: deb88d5a64132ed4596cb3c8b23df8b4, type: 3}
+    dialoge: So feel free to look around a bit.
+    options:
+      offset: {x: 0, y: 0, z: 0}
+      mirror_sprite: 0
+  - Emotion: {fileID: 21300000, guid: d50e9b6bbff80e24eb8329ff46b9ac73, type: 3}
+    dialoge: ...
+    options:
+      offset: {x: 0, y: 0, z: 0}
+      mirror_sprite: 0
+  - Emotion: {fileID: 21300000, guid: d50e9b6bbff80e24eb8329ff46b9ac73, type: 3}
+    dialoge: Finished admiring?
+    options:
+      offset: {x: 0, y: 0, z: 0}
+      mirror_sprite: 0
+  - Emotion: {fileID: 21300000, guid: deb88d5a64132ed4596cb3c8b23df8b4, type: 3}
+    dialoge: Then we can circle back to the other side of the palace now!
+    options:
+      offset: {x: 0, y: 0, z: 0}
+      mirror_sprite: 0
+  has_end_choice: 0
+  end_choice:
+    Emotion: {fileID: 0}
+    choice_left: 
+    choice_right: 
+    options:
+      offset: {x: 0, y: 0, z: 0}
+      mirror_sprite: 0

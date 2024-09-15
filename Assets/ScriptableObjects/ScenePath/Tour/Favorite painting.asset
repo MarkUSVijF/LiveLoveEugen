@@ -10,11 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9390f3e41f6434641b253e74ff421179, type: 3}
-  m_Name: Landing
+  m_Name: Favorite painting
   m_EditorClassIdentifier: 
   type: 3
   scene:
-  - {fileID: 11400000, guid: 3debaea51435ecf43943dfd304f698dd, type: 2}
-  - {fileID: 11400000, guid: 646bb33621c2fcb43bdbc631d581b769, type: 2}
-  go_right: {fileID: 11400000, guid: c5efa7d616ea3214dbf8b81fc5150593, type: 2}
-  go_left: {fileID: 11400000, guid: b9401fb47e778cb44b69978207e932a0, type: 2}
+  - {fileID: 11400000, guid: 8e24429d38b1a3b4ab12e48581dc7a31, type: 2}
+  go_right: {fileID: 0}
+  go_left: {fileID: 0}

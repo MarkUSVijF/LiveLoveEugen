@@ -14,6 +14,8 @@ public class Scene : SwipeController//, MonoBehaviour
 {
     [HideInInspector]
     public SceneManager manager = null;
+    [HideInInspector]
+    public SceneLoader loader = null;
 
     [SerializeField]
     public Image outline;
@@ -65,7 +67,8 @@ public class Scene : SwipeController//, MonoBehaviour
         ((SwipeController)this).SwipeEnd(position);
         if (Math.Abs(state) >= 1)
         {
-            manager.switchScene(state);
+            if (manager != null) manager.switchScene(state);
+            if (loader != null) loader.switchScene(state);
         }
     }
 }

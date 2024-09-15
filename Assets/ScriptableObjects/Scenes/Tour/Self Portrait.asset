@@ -1,0 +1,72 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba5f15dbe65f7684fad8a8c27d9c0416, type: 3}
+  m_Name: Self Portrait
+  m_EditorClassIdentifier: 
+  Background: {fileID: 21300000, guid: 851c1f3ed26c61d48aeb93cb932b6500, type: 3}
+  dialog:
+  - Emotion: {fileID: 21300000, guid: deb88d5a64132ed4596cb3c8b23df8b4, type: 3}
+    dialoge: What an accurate depiction of myself!
+    options:
+      offset: {x: 0, y: 0, z: 0}
+      mirror_sprite: 0
+  - Emotion: {fileID: 21300000, guid: d50e9b6bbff80e24eb8329ff46b9ac73, type: 3}
+    dialoge: As you can clearly see, I was quite tall.
+    options:
+      offset: {x: 0, y: 0, z: 0}
+      mirror_sprite: 0
+  - Emotion: {fileID: 21300000, guid: d50e9b6bbff80e24eb8329ff46b9ac73, type: 3}
+    dialoge: Those pesky rumors of me being too short to enter the french army are
+      all lies!
+    options:
+      offset: {x: 0, y: 0, z: 0}
+      mirror_sprite: 0
+  - Emotion: {fileID: 21300000, guid: 9189b9308f76e894690b76f1e5253397, type: 3}
+    dialoge: They must confuse me with someone else.
+    options:
+      offset: {x: 0, y: 0, z: 0}
+      mirror_sprite: 0
+  - Emotion: {fileID: 21300000, guid: 94a162d0a1a60ce478e8105a9ff34e59, type: 3}
+    dialoge: Now, I was quite good at war back in the day.
+    options:
+      offset: {x: 0, y: 0, z: 0}
+      mirror_sprite: 0
+  - Emotion: {fileID: 21300000, guid: 94a162d0a1a60ce478e8105a9ff34e59, type: 3}
+    dialoge: The ottomans were quite a nuisance, however nothing compared to me back
+      in France.
+    options:
+      offset: {x: 0, y: 0, z: 0}
+      mirror_sprite: 0
+  - Emotion: {fileID: 21300000, guid: d50e9b6bbff80e24eb8329ff46b9ac73, type: 3}
+    dialoge: My cousins would not get the message that I was the right person to
+      rule them all,
+    options:
+      offset: {x: 0, y: 0, z: 0}
+      mirror_sprite: 0
+  - Emotion: {fileID: 21300000, guid: d50e9b6bbff80e24eb8329ff46b9ac73, type: 3}
+    dialoge: So they had to pay!
+    options:
+      offset: {x: 0, y: 0, z: 0}
+      mirror_sprite: 0
+  - Emotion: {fileID: 21300000, guid: deb88d5a64132ed4596cb3c8b23df8b4, type: 3}
+    dialoge: "But let\u2019s move on to some less gruesome things."
+    options:
+      offset: {x: 0, y: 0, z: 0}
+      mirror_sprite: 0
+  has_end_choice: 0
+  end_choice:
+    Emotion: {fileID: 0}
+    choice_left: 
+    choice_right: 
+    options:
+      offset: {x: 0, y: 0, z: 0}
+      mirror_sprite: 0

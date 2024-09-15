@@ -12,5 +12,15 @@ public class TourPath : ScenePathBase
         type = Type.Tour;
     }
     [SerializeField]
-    Scene[] linearPath;
+    public TourScene[] scene;
+
+    [SerializeField]
+    public ScenePathBase go_right;
+    [SerializeField]
+    public ScenePathBase go_left;
+    [HideInInspector]
+    public ScenePathBase next
+    {
+        get { return go_right; }
+    }
 }

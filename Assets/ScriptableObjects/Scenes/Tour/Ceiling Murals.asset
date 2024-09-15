@@ -1,0 +1,72 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba5f15dbe65f7684fad8a8c27d9c0416, type: 3}
+  m_Name: Ceiling Murals
+  m_EditorClassIdentifier: 
+  Background: {fileID: 21300000, guid: 954dfd745a0de374ba5caed647b57fe0, type: 3}
+  dialog:
+  - Emotion: {fileID: 21300000, guid: d50e9b6bbff80e24eb8329ff46b9ac73, type: 3}
+    dialoge: In this room, try looking up!
+    options:
+      offset: {x: 0, y: 0, z: 0}
+      mirror_sprite: 0
+  - Emotion: {fileID: 21300000, guid: d50e9b6bbff80e24eb8329ff46b9ac73, type: 3}
+    dialoge: As you can see in this beautiful ceiling mural, some artists thought
+      I was akin to a god or the likes.
+    options:
+      offset: {x: 0, y: 0, z: 0}
+      mirror_sprite: 0
+  - Emotion: {fileID: 21300000, guid: deb88d5a64132ed4596cb3c8b23df8b4, type: 3}
+    dialoge: If you have not noticed by now, I am of course the person in the very
+      middle.
+    options:
+      offset: {x: 0, y: 0, z: 0}
+      mirror_sprite: 0
+  - Emotion: {fileID: 21300000, guid: deb88d5a64132ed4596cb3c8b23df8b4, type: 3}
+    dialoge: Just as the most important person should be.
+    options:
+      offset: {x: 0, y: 0, z: 0}
+      mirror_sprite: 0
+  - Emotion: {fileID: 21300000, guid: deb88d5a64132ed4596cb3c8b23df8b4, type: 3}
+    dialoge: To my right you can see the goddess of justice holding my hand.
+    options:
+      offset: {x: 0, y: 0, z: 0}
+      mirror_sprite: 0
+  - Emotion: {fileID: 21300000, guid: d50e9b6bbff80e24eb8329ff46b9ac73, type: 3}
+    dialoge: And a bunch of other people around me as well.
+    options:
+      offset: {x: 0, y: 0, z: 0}
+      mirror_sprite: 0
+  - Emotion: {fileID: 21300000, guid: 3c0fcbfef68039444abfae425dfd9464, type: 3}
+    dialoge: "Now before your neck starts hurting too much from admiring me\u2026"
+    options:
+      offset: {x: 0, y: 0, z: 0}
+      mirror_sprite: 0
+  - Emotion: {fileID: 21300000, guid: d50e9b6bbff80e24eb8329ff46b9ac73, type: 3}
+    dialoge: "The red marble in this room compliments the ambience rather nicely,
+      don\u2019t you think?"
+    options:
+      offset: {x: 0, y: 0, z: 0}
+      mirror_sprite: 0
+  - Emotion: {fileID: 21300000, guid: d50e9b6bbff80e24eb8329ff46b9ac73, type: 3}
+    dialoge: "But let\u2019s keep going."
+    options:
+      offset: {x: 0, y: 0, z: 0}
+      mirror_sprite: 0
+  has_end_choice: 1
+  end_choice:
+    Emotion: {fileID: 21300000, guid: d50e9b6bbff80e24eb8329ff46b9ac73, type: 3}
+    choice_left: To his Favorite Pictures
+    choice_right: To his Self Portrait
+    options:
+      offset: {x: 0, y: 0, z: 0}
+      mirror_sprite: 0

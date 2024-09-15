@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba5f15dbe65f7684fad8a8c27d9c0416, type: 3}
+  m_Name: Favorite pictures
+  m_EditorClassIdentifier: 
+  Background: {fileID: 21300000, guid: 79f9659a988f86449bcb3e030fb32671, type: 3}
+  dialog:
+  - Emotion: {fileID: 21300000, guid: 94a162d0a1a60ce478e8105a9ff34e59, type: 3}
+    dialoge: Ah yes, my favorite pictures in the current state of my palace!
+    options:
+      offset: {x: 0, y: 0, z: 0}
+      mirror_sprite: 0
+  - Emotion: {fileID: 21300000, guid: deb88d5a64132ed4596cb3c8b23df8b4, type: 3}
+    dialoge: These are still in exactly the same positions I put them in!
+    options:
+      offset: {x: 0, y: 0, z: 0}
+      mirror_sprite: 0
+  - Emotion: {fileID: 21300000, guid: 94a162d0a1a60ce478e8105a9ff34e59, type: 3}
+    dialoge: "Please do not worry about that children\u2019s painting behind me,
+      it is nothing of importance."
+    options:
+      offset: {x: 0, y: 0, z: 0}
+      mirror_sprite: 0
+  - Emotion: {fileID: 21300000, guid: 94a162d0a1a60ce478e8105a9ff34e59, type: 3}
+    dialoge: "Please do not worry about that children\u2019s painting behind me,
+      it is nothing of importance."
+    options:
+      offset: {x: 350, y: 0, z: 0}
+      mirror_sprite: 0
+  - Emotion: {fileID: 21300000, guid: 94a162d0a1a60ce478e8105a9ff34e59, type: 3}
+    dialoge: So, which one of my pictures would you like to take a closer look at?
+    options:
+      offset: {x: 350, y: 0, z: 0}
+      mirror_sprite: 0
+  has_end_choice: 1
+  end_choice:
+    Emotion: {fileID: 21300000, guid: d50e9b6bbff80e24eb8329ff46b9ac73, type: 3}
+    choice_left: Left Painting
+    choice_right: Right Painting
+    options:
+      offset: {x: 0, y: 0, z: 0}
+      mirror_sprite: 0
