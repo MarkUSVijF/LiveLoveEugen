@@ -236,9 +236,9 @@ public class ChatController : MonoBehaviour
             if (responseMessages.Items[0].PrintContent().ToLower().Contains("yes")) OnContinueDate();
         }
 
-        if (messages.Count > keepDatingCount && !keepDatingWasCalled) KeepDating();
+        //if (messages.Count > keepDatingCount && !keepDatingWasCalled) KeepDating();
         var threadRequest = new CreateThreadRequest(messages);
-        await interpreter.CreateThreadAndRunAsync(threadRequest, StreamEventHandlerYesNo);
+     //   await interpreter.CreateThreadAndRunAsync(threadRequest, StreamEventHandlerYesNo);
         await assistant.CreateThreadAndRunAsync(threadRequest, StreamEventHandler);
 
     }
@@ -250,7 +250,9 @@ public class ChatController : MonoBehaviour
         scrollView.contentContainer.Clear();
         foreach (var response in messages)
         {
-            scrollView.contentContainer.Add(new Label($"{response.Role}:\n{response.PrintContent()}"));
+            var Content = response.PrintContent();
+            for (int i = Content.Length-1; i > 0 ; i -= 30) Content = Content.Insert(i,"\r\n");
+            scrollView.contentContainer.Add(new Label($"{response.Role}:\n{Content}"));
             Debug.Log($"{response.Role}: {response.PrintContent()}");
         }
 
