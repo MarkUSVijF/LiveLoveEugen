@@ -1,7 +1,6 @@
 using MyBox;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Animations;
 using UnityEngine;
 using static SceneDescribtion;
 
@@ -18,7 +17,7 @@ public class TinderScene : SceneBase
     */
 
     [ConditionalField(nameof(is_animated), inverse:true)] public Sprite Eugen;
-    [ConditionalField(nameof(is_animated))] public AnimatorController AnimatedEugen;
+    [ConditionalField(nameof(is_animated))] public RuntimeAnimatorController AnimatedEugen;
     public bool is_animated=false;
     public string user = "Prince Eugen";
     public int age = 361;
