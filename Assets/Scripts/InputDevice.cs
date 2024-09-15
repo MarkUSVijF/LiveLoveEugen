@@ -5,33 +5,41 @@ using UnityEngine.EventSystems;
 
 public class InputDevice : MonoBehaviour, IDragHandler, IPointerDownHandler, IPointerUpHandler
 {
-    SceneManager sceneManager;
+    public SceneManager sceneManager;
+    public SceneLoader sceneLoader;
     Scene active_scene = null;
     bool is_swiping = false;
 
     public void Awake()
     {
-        sceneManager = GetComponent<SceneManager>();
     }
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        this.getActiveScene(eventData).SwipeStart(eventData.position);
+        this.getActiveScene(eventData)?.SwipeStart(eventData.position);
     }
 
     public void OnDrag(PointerEventData eventData)
     {
-        this.getActiveScene(eventData).OnSwipe(eventData.position);
+        this.getActiveScene(eventData)?.OnSwipe(eventData.position);
     }
 
     public void OnPointerUp(PointerEventData eventData)
     {
-        this.getActiveScene(eventData).SwipeEnd(eventData.position);
+        this.getActiveScene(eventData)?.SwipeEnd(eventData.position);
     }
 
     private Scene getActiveScene(PointerEventData eventData)
     {
-        var _scene = sceneManager.getActiveScene();
+        Scene _scene = null;
+        if (sceneLoader != null)
+        {
+            _scene = sceneLoader.getActiveScene();
+        }
+        else if (sceneManager != null)
+        {
+            _scene = sceneManager.getActiveScene();
+        }
         if (active_scene != _scene)
         {
             if (is_swiping)

@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: Default
   m_EditorClassIdentifier: 
   Eugen: {fileID: 21300000, guid: 293d4c4d1524c394280d8338e6715d3c, type: 3}
-  name: Eugen
+  AnimatedEugen: {fileID: 0}
+  is_animated: 0
+  user: Prince Eugen
   age: 361
   location: Belvedere Palace, Vienna
   bio: A True Art Connoisseur.

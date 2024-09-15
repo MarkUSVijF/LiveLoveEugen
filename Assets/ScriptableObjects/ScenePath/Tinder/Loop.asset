@@ -12,5 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a6d01e306920a04183397b399dec4fa, type: 3}
   m_Name: Loop
   m_EditorClassIdentifier: 
-  next: []
-  linearPath: []
+  type: 1
+  scene:
+  - {fileID: 11400000, guid: ac30bb4a1151f6d418262f6159258178, type: 2}
+  - {fileID: 11400000, guid: 4cdacdd977cec324f976d0cf6a46d946, type: 2}
+  - {fileID: 11400000, guid: bcc29ccc753739b468f750e1a134c1cd, type: 2}
+  - {fileID: 11400000, guid: 40c4590dd2524d14188f9c95a423ef94, type: 2}
+  any_accept: {fileID: 11400000, guid: 3b474496eb5a788409a0db36b40a3cdf, type: 2}
+  last_nope: {fileID: 11400000}

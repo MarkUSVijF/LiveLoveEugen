@@ -12,7 +12,7 @@ public class TinderPath : ScenePathBase
 
     // each no-match continues the scene
     [SerializeField]
-    TinderScene[] scene;
+    public TinderScene[] scene;
 
     [SerializeField]
     public ScenePathBase any_accept;

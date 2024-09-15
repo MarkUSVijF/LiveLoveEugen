@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a0202ca3f1f5e9409154e1648bbb290, type: 3}
   m_Name: Horse
   m_EditorClassIdentifier: 
-  Eugen: {fileID: 0}
+  Eugen: {fileID: 21300000, guid: f024d599b17a52140a91d3b0d64f2976, type: 3}
   name: Eugen
   age: 361
   location: Belvedere Palace, Vienna

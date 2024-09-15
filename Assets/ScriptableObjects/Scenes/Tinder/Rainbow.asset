@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a0202ca3f1f5e9409154e1648bbb290, type: 3}
   m_Name: Rainbow
   m_EditorClassIdentifier: 
-  Eugen: {fileID: 0}
+  Eugen: {fileID: 21300000, guid: 72ee169f221da8b4abe47c98747c03ae, type: 3}
+  AnimatedEugen: {fileID: 9100000, guid: 62db04d90ab77604e9c60261ed430fa9, type: 2}
+  is_animated: 1
   name: Eugen
   age: 361
   location: Belvedere Palace, Vienna
