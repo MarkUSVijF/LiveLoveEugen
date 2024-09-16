@@ -15,5 +15,5 @@ MonoBehaviour:
   type: 3
   scene:
   - {fileID: 11400000, guid: 8e24429d38b1a3b4ab12e48581dc7a31, type: 2}
-  go_right: {fileID: 0}
+  go_right: {fileID: 11400000, guid: 42fe0b65e64140c43afc261ccc399074, type: 2}
   go_left: {fileID: 0}

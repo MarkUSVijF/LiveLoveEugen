@@ -1,0 +1,46 @@
+1) tinder swipe
+2) first chat
+3) date-tour
+...) chat -> tour
+
+
+
+250x620
+
+
+
+-) Tinder [Matching]
+ -) Eugen (User Image)
+ -) User Name
+ -) User Age
+ -) Location?
+ -) (Bio/Beruf)
+
+-) Tinder [Chat]
+ -) intro cutscene
+
+-) Tour [Continue]
+ -) Background
+ -) Eugen
+ -) Text
+
+-) Tour [Choice]
+ -) Background (Large)
+ -) Eugen
+ -) Text Left
+ -) Text Right
+
+-) Break [AIChat]
+ -) Backgroud
+ -) Eugen Start Msg
+ -) (Keyboard) #automatic
+ -) my msgs #scripted
+ -) Eugen msgs #scripted
+
+
+
+
+
+
+
+

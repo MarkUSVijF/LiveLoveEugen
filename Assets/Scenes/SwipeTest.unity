@@ -563,7 +563,7 @@ MonoBehaviour:
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 900, y: 1600}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -952,6 +952,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7818422547365018240, guid: 8c168c6b44c6eb748ba0e3a575a79f37, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8183811591213418803, guid: 8c168c6b44c6eb748ba0e3a575a79f37, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1030,6 +1034,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8183811591213418803, guid: 8c168c6b44c6eb748ba0e3a575a79f37, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8880423577976764129, guid: 8c168c6b44c6eb748ba0e3a575a79f37, type: 3}
+      propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -1147,11 +1155,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4654708253064340115, guid: 69bf1778e8a33364b8ce4ff4f28b3721, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 146.9
+      value: 164.54
       objectReference: {fileID: 0}
     - target: {fileID: 4654708253064340115, guid: 69bf1778e8a33364b8ce4ff4f28b3721, type: 3}
       propertyPath: m_SizeDelta.y
       value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8309602039035788008, guid: 69bf1778e8a33364b8ce4ff4f28b3721, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8845408705413145645, guid: 69bf1778e8a33364b8ce4ff4f28b3721, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 35.76
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

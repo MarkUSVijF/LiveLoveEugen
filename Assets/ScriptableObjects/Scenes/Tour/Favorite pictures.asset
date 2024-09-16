@@ -34,12 +34,12 @@ MonoBehaviour:
     dialoge: "Please do not worry about that children\u2019s painting behind me,
       it is nothing of importance."
     options:
-      offset: {x: 350, y: 0, z: 0}
+      offset: {x: 0, y: 0, z: 0}
       mirror_sprite: 0
   - Emotion: {fileID: 21300000, guid: 94a162d0a1a60ce478e8105a9ff34e59, type: 3}
     dialoge: So, which one of my pictures would you like to take a closer look at?
     options:
-      offset: {x: 350, y: 0, z: 0}
+      offset: {x: 0, y: 0, z: 0}
       mirror_sprite: 0
   has_end_choice: 1
   end_choice:
